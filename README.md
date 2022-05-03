@@ -14,6 +14,7 @@ Recently, NLP models have achieved remarkable progress across a variety of tasks
 
 ## Model training:
 Please follow the [transformer](https://github.com/huggingface/transformers) repository to finetune your model. Once the model is trained, save all attentions and predictions and follow the notebook to find shortcuts!
+To find synonyms, we use the counter-fitting word embeddings as shown in [Textfooler](https://github.com/jind11/TextFooler)
 
 ## Citing
 If you find our paper/code useful, please consider citing:
