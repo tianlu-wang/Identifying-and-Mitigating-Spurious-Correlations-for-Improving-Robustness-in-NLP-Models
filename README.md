@@ -12,9 +12,13 @@ Recently, NLP models have achieved remarkable progress across a variety of tasks
 - Transformers = 3.2.0 (whatever versions should be fine if you finetune your own models)
 - Python 2/3
 
+## Data
+We used publicly avaible [SST-2](https://huggingface.co/datasets/glue/viewer/sst2/test), [yelp](https://www.yelp.com/dataset) and [Amazon review](https://jmcauley.ucsd.edu/data/amazon/) datasets. The paper only tackles sentiment classification tasks but the proposed method can be potentially applied on general text classification tasks (datasets).
+
 ## Model training:
-Please follow the [transformer](https://github.com/huggingface/transformers) repository to finetune your model. Once the model is trained, save all attentions and predictions and follow the notebook to find shortcuts!
-To find synonyms, we use the counter-fitting word embeddings as shown in [Textfooler](https://github.com/jind11/TextFooler)
+1. Please follow the [transformer](https://github.com/huggingface/transformers) repository to finetune your model. Replace the trainer.py and run_glue.py in transformers repository with the trainer.py and run_attention.py provided in this repo, install transformers by running ```pip install -e .``` run_attention.py will save all predictions and attentions score.
+2. Feel free to explore other methods to extract important tokens. To test the proposed method, you only need the model predictions and the "importantce scores".
+3. To find synonyms, we use the counter-fitting word embeddings as shown in [Textfooler](https://github.com/jind11/TextFooler) as well as WordNet.
 
 ## Citing
 If you find our paper/code useful, please consider citing:
